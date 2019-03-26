@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>USAA Project</title>
-
+  
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-
+  
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
+  
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -32,6 +32,11 @@
       padding: 3rem 1.5rem;
       text-align: center;
     }
+    
+    .blank {
+      height: 2rem;
+    }
+    
   </style>
   <!-- Custom styles for this template -->
   <link href="starter-template.css" rel="stylesheet">
@@ -39,188 +44,297 @@
 
 <body>
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(78, 73, 105);">
+    <a class="navbar-brand" href="#">Home</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <div class="row">
-
-      <!-- Blog Entries Column -->
-      <div class="col-md-8">
-
-        <h1 class="my-4">Page Heading
-          <small>Secondary Text</small>
-        </h1>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-              nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-              possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
+    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">Public</a>
+        <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <a class="dropdown-item" href="#">All posts</a>
+          <a class="dropdown-item" href="#">Employees Survey</a>
+          <a class="dropdown-item" href="#">Performance Evaluation</a>
         </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-              nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-              possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Blog Post -->
-        <div class="card mb-4">
-          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-          <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-              nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-              possimus, veniam magni quis!</p>
-            <a href="#" class="btn btn-primary">Read More &rarr;</a>
-          </div>
-          <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-          </div>
-        </div>
-
-        <!-- Pagination -->
-        <ul class="pagination justify-content-center mb-4">
-          <li class="page-item">
-            <a class="page-link" href="#">&larr; Older</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">Newer &rarr;</a>
-          </li>
-        </ul>
-
-      </div>
-
-      <!-- Sidebar Widgets Column -->
-      <div class="col-md-4">
-
-        <!-- Search Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Search</h5>
-          <div class="card-body">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Categories Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Categories</h5>
-          <div class="card-body">
-            <div class="row">
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">Web Design</a>
-                  </li>
-                  <li>
-                    <a href="#">HTML</a>
-                  </li>
-                  <li>
-                    <a href="#">Freebies</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="#">JavaScript</a>
-                  </li>
-                  <li>
-                    <a href="#">CSS</a>
-                  </li>
-                  <li>
-                    <a href="#">Tutorials</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Side Widget -->
-        <div class="card my-4">
-          <h5 class="card-header">Side Widget</h5>
-          <div class="card-body">
-            You can put anything you want inside of these side widgets. They are easy to use, and feature the new
-            Bootstrap 4 card containers!
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-    <!-- /.row -->
-
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Anonymous</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search post" aria-label="Search">
+      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
-  <!-- End Page Content -->
+</nav>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
-  </script>
-  <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-    crossorigin="anonymous"></script>
-</body>
 
-</html>
+<!-- Page Content -->
+<div class="container">
+  
+  <div class="row">
+    
+    <!-- Blog Entries Column -->
+    <div class="col-md-12">
+      
+      <h1 class="my-4">USAA Feedback Forum
+        <h5>Encourage feedback and ideas from employees</h5>
+      </h1>
+      
+      
+      <!-- Blog Post Deck-->
+      <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Essential building blocks of employee engagement</h5>
+            <p class="card-text">
+              <ul>
+                <li>Information sharing: sales figures, weekly communication updates.</li>
+                <li>Managing performance: Key performance indicators, 
+                  annual performance review, clarity on required behaviours, 
+                  clarity on what is required, 
+                  give employees space to show initiative, 
+                  encourage ideas and acknowledge good ideas openly.</li>
+                  <li>Leadership: consistency, be clear about acceptable and unacceptable behaviours. </li>
+                  <li>Recognise that employees' experience is only as good as their manager.</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-dark">Read More &rarr;</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Posted on January 1, 2017 by Manager</small>
+            </div>
+            
+            
+          </div>
+          <div class="card">
+            <img class="card-img-top" src="https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Tips For Giving Effective Feedback</h5>
+              <p class="card-text">
+                
+                <ul>
+                  <li>Give your feedback directly to the person it applies to.</li>
+                  <li>Be specific and give examples.</li>
+                  <li>Choose the right place. </li>
+                  <li>Don't dwell on the past.</li>
+                </ul>
+              </p>
+              <a href="#" class="btn btn-dark">Read More &rarr;</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago by Manager</small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Space Line -->
+        <div class="blank"></div>
+        
+        <!-- Blog Post Deck-->
+        <div class="card-deck">
+          <div class="card">
+            <img class="card-img-top" src="https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Essential building blocks of employee engagement</h5>
+              <p class="card-text">
+                <ul>
+                  <li>Information sharing: sales figures, weekly communication updates.</li>
+                  <li>Managing performance: Key performance indicators, 
+                    annual performance review, clarity on required behaviours, 
+                    clarity on what is required, 
+                    give employees space to show initiative, 
+                    encourage ideas and acknowledge good ideas openly.</li>
+                    <li>Leadership: consistency, be clear about acceptable and unacceptable behaviours. </li>
+                    <li>Recognise that employees' experience is only as good as their manager.</li>
+                  </ul>
+                </p>
+                <a href="#" class="btn btn-dark">Read More &rarr;</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Posted on January 1, 2017 by Manager</small>
+              </div>
+              
+              
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Tips For Giving Effective Feedback</h5>
+                <p class="card-text">
+                  
+                  <ul>
+                    <li>Give your feedback directly to the person it applies to.</li>
+                    <li>Be specific and give examples.</li>
+                    <li>Choose the right place. </li>
+                    <li>Don't dwell on the past.</li>
+                  </ul>
+                </p>
+                <a href="#" class="btn btn-dark">Read More &rarr;</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago by Manager</small>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Space Line -->
+          <div class="blank"></div>
+          
+          <!-- Blog Post Deck-->
+          <div class="card-deck">
+            <div class="card">
+              <img class="card-img-top" src="https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">Essential building blocks of employee engagement</h5>
+                <p class="card-text">
+                  <ul>
+                    <li>Information sharing: sales figures, weekly communication updates.</li>
+                    <li>Managing performance: Key performance indicators, 
+                      annual performance review, clarity on required behaviours, 
+                      clarity on what is required, 
+                      give employees space to show initiative, 
+                      encourage ideas and acknowledge good ideas openly.</li>
+                      <li>Leadership: consistency, be clear about acceptable and unacceptable behaviours. </li>
+                      <li>Recognise that employees' experience is only as good as their manager.</li>
+                    </ul>
+                  </p>
+                  <a href="#" class="btn btn-dark">Read More &rarr;</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Posted on January 1, 2017 by Manager</small>
+                </div>
+                
+                
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Tips For Giving Effective Feedback</h5>
+                  <p class="card-text">
+                    
+                    <ul>
+                      <li>Give your feedback directly to the person it applies to.</li>
+                      <li>Be specific and give examples.</li>
+                      <li>Choose the right place. </li>
+                      <li>Don't dwell on the past.</li>
+                    </ul>
+                  </p>
+                  <a href="#" class="btn btn-dark">Read More &rarr;</a>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago by Manager</small>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Space Line -->
+            <div class="blank"></div>
+            
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+              <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+              </li>
+            </ul>
+            
+          </div>
+          
+          <!-- Sidebar Widgets Column -->
+          <div class="col-md-4">
+            
+            <!-- Search Widget
+              <div class="card my-4">
+                <h5 class="card-header">Search post</h5>
+                <div class="card-body">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-dark" type="button">Go!</button>
+                    </span>
+                  </div>
+                </div>
+              </div> -->
+              
+              <!-- Categories Widget -->
+              <!-- <div class="card my-4">
+                <h5 class="card-header">Categories</h5>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#">All posts</a>
+                        </li>
+                        <li>
+                          <a href="#">Survey</a>
+                        </li>
+                        <li>
+                          <a href="#">Performance evaluation</a>
+                        </li>
+                      </ul>              
+                    </div> -->
+                    <!-- <div class="col-lg-6">
+                      <ul class="list-unstyled mb-0">
+                        <li>
+                          <a href="#">JavaScript</a>
+                        </li>
+                        <li>
+                          <a href="#">CSS</a>
+                        </li>
+                        <li>
+                          <a href="#">Tutorials</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              
+              <!-- Side Widget -->
+              <!-- <div class="card my-4">
+                <h5 class="card-header">Side Widget</h5>
+                <div class="card-body">
+                  You can put anything you want inside of these side widgets. They are easy to use, and feature the new
+                  Bootstrap 4 card containers!
+                </div>
+              </div> -->
+              
+            </div>
+            
+          </div>
+          <!-- /.row -->
+          
+        </div>
+        <!-- End Page Content -->
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+        <script>
+          window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
+          </script>
+          <script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+          crossorigin="anonymous"></script>
+        </body>
+        
+        </html>
+        
