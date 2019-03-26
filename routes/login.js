@@ -43,8 +43,7 @@ router.post('/', (req, res) => {
                 res.render('home');
             } else {
                 console.log('fail');
-                //res.render('login', {error: 'Invalid user credentials'});
-                res.render('login');
+                res.render('login', {error: 'Invalid user credentials'});
             }
         }
     });

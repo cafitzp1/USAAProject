@@ -7,6 +7,7 @@ const http = require('http');
 
 const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
+const homeRouter = require('./routes/home');
 const feedRouter = require('./routes/feed');
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/home', homeRouter);
 app.use('/feed', feedRouter);
 
 // set view engine
