@@ -1,0 +1,9 @@
+{
+    "database": {
+        "user": "admin",
+        "password": "vu7ZwXU2&8",
+        "host": "usaaprojectdbinstance.cqt7sgppevrk.us-west-2.rds.amazonaws.com",
+        "database": "usaaprojectdb",
+        "timeout": "10000"
+    }
+}
