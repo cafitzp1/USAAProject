@@ -2,7 +2,7 @@ USE usaaprojectdb;
 
 DROP PROCEDURE IF EXISTS `usaaprojectdb`.`SystemUser_Create`;
 
-CREATE PROCEDURE SystemUser_Create(
+CREATE PROCEDURE SystemUser_Create (
     IN `name` VARCHAR(40)
     , IN `email` VARCHAR(40)
     , IN `username` VARCHAR(40)
