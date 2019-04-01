@@ -10,6 +10,7 @@ const loginRouter = require('./routes/login');
 const homeRouter = require('./routes/home');
 const feedRouter = require('./routes/feed');
 const aboutRouter = require('./routes/about');
+const anonymousRouter = require('./routes/anonymous');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use('/login', loginRouter);
 app.use('/home', homeRouter);
 app.use('/feed', feedRouter);
 app.use('/about', aboutRouter);
+app.use('/anonymous', anonymousRouter);
 
 // set view engine
 app.set('view engine', 'ejs');
