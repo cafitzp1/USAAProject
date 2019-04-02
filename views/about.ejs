@@ -42,36 +42,8 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(78, 73, 105);">
-    <a class="navbar-brand" href="/home">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-      <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item">
-          <a class="nav-link" href="/feed">Forum</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search post" aria-label="Search">
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-
+  <!-- navigation section included in a separate file to avoid redundant coding -->
+  <%- include partials/navigation.ejs %>
 
   <!-- Page Content -->
   <div class="container">
@@ -81,8 +53,7 @@
       <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        <h1 class="my-4" style="color:white">About Us
-        </h1>
+        <h1 class="my-4">About USAA</h1>
 
         <!-- Analytics -->
         <div id="newsFeed">

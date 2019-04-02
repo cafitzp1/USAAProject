@@ -14,10 +14,13 @@ CREATE TABLE `SystemUser` (
     , PRIMARY KEY (`SystemUserID`)
 );
 
+use usaaprojectdb;
+
 DROP TABLE IF EXISTS `FeedbackPost`;
 CREATE TABLE `FeedbackPost` (
     `FeedbackPostID` INT NOT NULL AUTO_INCREMENT
     , `SystemUserID` INT NOT NULL
+    , `Title` VARCHAR(40)
     , `PostBody` VARCHAR(255)
     , `Anonymous` BIT NOT NULL
     , `CreateDate` TIMESTAMP NOT NULL
