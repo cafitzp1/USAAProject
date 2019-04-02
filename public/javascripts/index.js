@@ -64,6 +64,11 @@ const getPublicPosts = () => {
 
 const displayPost = (postTitle, postBody, postAuthor, datePosted) => {
 
+    // set name to anonymous if undefined
+    if (postAuthor == undefined) {
+        postAuthor = "Anonymous";
+    }
+
     // Create elements for post
     let p = document.createElement('p');
     let h2 = document.createElement('h2');
