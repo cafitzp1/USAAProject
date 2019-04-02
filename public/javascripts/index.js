@@ -4,6 +4,7 @@
 
 // Methods
 var createPost = () => {
+
     // Create elements for post
     var p = document.createElement('p');
     var h2 = document.createElement('h2');
@@ -19,10 +20,10 @@ var createPost = () => {
     footerDiv.className = "card-footer text-muted";
     a.href = "#";
 
-    h2.innerHTML = "Post Title";
-    p.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!";
-    a.innerHTML = "Start Bootstrap";
-    footerDiv.innerHTML = "Posted on January 1, 2017 by ";
+    h2.innerHTML = "title"
+    p.innerHTML = "content";
+    a.innerHTML = "name";
+    footerDiv.innerHTML = "Posted by ";
 
     bodyDiv.appendChild(h2);
     bodyDiv.appendChild(p);
