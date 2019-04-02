@@ -23,5 +23,5 @@ END
 -- /* usage */
 CALL usaaprojectdb.FeedbackPost_Create('1', 'Post 1', 'Hello, this is a test', false, '2019-04-02 12:31:59');
 CALL usaaprojectdb.FeedbackPost_Create('1', 'Post 2', 'This is also a test', false, '2019-04-02 12:32:09');
-CALL usaaprojectdb.FeedbackPost_Create('1', 'Post 3', 'And so is this', true, '2019-04-02 12:32:33');
-CALL usaaprojectdb.FeedbackPost_Create('2', 'Post 4', 'This is a final test', false, '2019-04-02 12:32:55');
+CALL usaaprojectdb.FeedbackPost_Create('1', 'Post 3', 'This is a final test', true, '2019-04-02 12:32:33');
+CALL usaaprojectdb.FeedbackPost_Create('2', 'Post 4', 'And so is this', false, '2019-04-02 12:32:55');

@@ -1,44 +1,19 @@
 <!-- News Feed -->
 <div id="news-feed">
-    <!-- Blog Post -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-                nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-                possimus, veniam magni quis!</p>
-        </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-        </div>
-    </div>
-
-    <!-- Blog Post -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-                nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-                possimus, veniam magni quis!</p>
-        </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-        </div>
-    </div>
-
-    <!-- Blog Post -->
-    <div class="card mb-4">
-        <div class="card-body">
-            <h2 class="card-title">Post Title</h2>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque,
-                nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus
-                possimus, veniam magni quis!</p>
-        </div>
-        <div class="card-footer text-muted">
-            Posted on January 1, 2017 by
-            <a href="#">Start Bootstrap</a>
-        </div>
-    </div>
+    <!-- News Feed Post -->
+    <% if(locals.data){ %>
+        <!-- Data returned: FeedbackPostID, SystemUserID, Title, PostBody, Anonymous, CreateDate -->
+        <% for(let i = 0; i < locals.data.length; i++) { %>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title"><%= locals.data[i].Title %></h2>
+                    <p class="card-text"><%= locals.data[i].PostBody %></p>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on <%= locals.data[i].CreateDate.toLocaleString() %> by
+                    <a href="#"><%= locals.data[i].Name || "Anonymous"%></a>
+                </div>
+            </div>
+         <% } %>
+    <% } %>
 </div>

@@ -38,7 +38,7 @@
   </style>
 </head>
 
-<body onload="getPublicPosts()">
+<body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(78, 73, 105);">
     <a class="navbar-brand" href="/home">Home</a>
@@ -85,6 +85,10 @@
         <%- include partials/post_section_public %>
         <%- include partials/news_feed %>
 
+        <% if(locals.error){ %>
+          <p style="color: red"><%= error %></p>
+        <% } %>
+
         <!-- Pagination -->
         <ul class="pagination justify-content-center mb-4">
           <li class="page-item">
@@ -112,8 +116,6 @@
             </div>
           </div>
         </div>
-
-
 
         <!-- Side Widget -->
         <div class="card my-4">

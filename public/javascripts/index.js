@@ -59,7 +59,39 @@ const createPost = () => {
 };
 
 const getPublicPosts = () => {
+    // $.ajax({
+    //     type: 'GET',
+    //     url: /,
+    //     data: `date=${date}`,
+    //     success: (response) => {
+    //         // stop load indicator, notify
+    //         $('#date-load-indicator').css('display', 'none');
 
+    //         // store data; attributes: Count, Items, ScannedCount
+    //         let data = response;
+
+    //         console.log(`${data.Count} items retrieved`);
+    //         console.log(data);
+
+    //         // iterate and store items; attributes: recordID, record, dateCreated, ttl
+    //         storedData = [];
+    //         data.Items.forEach((item) => {
+    //             storedData.push([item.recordID, item.record]);
+    //         })
+
+    //         // display initial record
+    //         let time = $('#hour-select option:selected').val();
+    //         let datetime = `${date} ${time}`;
+
+    //         // set hourly data for whatever is selected and focus select input
+    //         showHourlyData(datetime);
+    //         $('#hour-select').focus();
+    //     },
+    //     error: (error) => {
+    //         $('#date-load-indicator').css('display', 'none');
+    //         console.error(error);
+    //     }
+    // });
 };
 
 const displayPost = (postTitle, postBody, postAuthor, datePosted) => {
@@ -107,4 +139,4 @@ const displayPost = (postTitle, postBody, postAuthor, datePosted) => {
 
 $('#post-button').click(() => {
     createPost();
-});
+}); 

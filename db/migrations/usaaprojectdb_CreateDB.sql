@@ -14,8 +14,6 @@ CREATE TABLE `SystemUser` (
     , PRIMARY KEY (`SystemUserID`)
 );
 
-use usaaprojectdb;
-
 DROP TABLE IF EXISTS `FeedbackPost`;
 CREATE TABLE `FeedbackPost` (
     `FeedbackPostID` INT NOT NULL AUTO_INCREMENT
