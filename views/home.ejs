@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>USAA Project</title>
-  
+
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
-  
+
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  
+
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -20,22 +20,22 @@
       -ms-user-select: none;
       user-select: none;
     }
-    
+
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
     }
-    
+
     body {
       padding-top: 5rem;
     }
-    
+
     .starter-template {
       padding: 3rem 1.5rem;
       text-align: center;
     }
-    
+
     .blank {
       height: 2rem;
     }
@@ -43,80 +43,53 @@
 </head>
 
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: rgb(78, 73, 105);">
-    <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/USAA_logo.svg/1920px-USAA_logo.svg.png" alt="logo" style="width: 35px; height:35px;"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-    <ul class="navbar-nav mr-auto">      
-      
-      <li class="nav-item">
-        <a class="nav-link" href="/home">Home</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="feed">Forum</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="#">Survey</a>
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link" href="#">Evaluation</a>
-      </li>     
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-dark my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+  <!-- navigation section included in a separate file to avoid redundant coding -->
+  <%- include partials/navigation.ejs %>
+
+  <!-- nav content -->
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+        aria-controls="nav-home" aria-selected="true">Home</a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+        aria-controls="nav-profile" aria-selected="false">Profile</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+        aria-controls="nav-contact" aria-selected="false">Contact</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <!-- Homepage Content -->
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
 
-<!-- nav content -->
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <!-- Homepage Content -->
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    
-    
-    <div class="container">
-      
-      <div class="row">
-        
-        <!-- Blog Entries Column -->
-        <div class="col-md-12">
-          
-          <h1 class="my-4">USAA Feedback Forum
-            <h5>Encourage feedback and ideas from employees</h5>
-          </h1>
-          
-          
-          <!-- Card columns -->
-          <div class="card-columns">
-            <div class="card">
-              <img src="https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="card-img">
-              <div class="card-body">
-                <h5 class="card-title">Essential building blocks of employee engagement</h5>
-                <p class="card-text">
-                  <ul>
-                    <li>Information sharing: sales figures, weekly communication updates.</li>
-                    <li>Managing performance: Key performance indicators, 
-                      annual performance review, clarity on required behaviours, 
-                      clarity on what is required, 
-                      give employees space to show initiative, 
-                      encourage ideas and acknowledge good ideas openly.</li>
+      <div class="container">
+
+        <div class="row">
+
+          <!-- Blog Entries Column -->
+          <div class="col-md-12">
+
+            <h1 class="my-4">USAA Feedback Forum
+              <h5>Encourage feedback and ideas from employees</h5>
+            </h1>
+
+
+            <!-- Card columns -->
+            <div class="card-columns">
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/1661004/pexels-photo-1661004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="card-img-top" alt="card-img">
+                <div class="card-body">
+                  <h5 class="card-title">Essential building blocks of employee engagement</h5>
+                  <p class="card-text">
+                    <ul>
+                      <li>Information sharing: sales figures, weekly communication updates.</li>
+                      <li>Managing performance: Key performance indicators,
+                        annual performance review, clarity on required behaviours,
+                        clarity on what is required,
+                        give employees space to show initiative,
+                        encourage ideas and acknowledge good ideas openly.</li>
                       <li>Leadership: consistency, be clear about acceptable and unacceptable behaviours. </li>
                       <li>Recognise that employees' experience is only as good as their manager.</li>
                     </ul>
@@ -126,168 +99,178 @@
               </div>
               <div class="card p-3">
                 <blockquote class="blockquote mb-0 card-body">
-                  <p>Employee feedback is an integral part of the employee experience process and a mechanism 
-                    that will increasingly help employees get better at their job and for the organization to 
+                  <p>Employee feedback is an integral part of the employee experience process and a mechanism
+                    that will increasingly help employees get better at their job and for the organization to
                     develop a better workplace culture.</p>
-                    <!-- <footer class="blockquote-footer">
+                  <!-- <footer class="blockquote-footer">
                       <small class="text-muted">
                         Ed Batista
                       </small>
                     </footer> -->
-                  </blockquote>
-                </div>
-                <div class="card">
-                  <img src="https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Tips For Giving Effective Feedback</h5>
-                    <p class="card-text">
-                      <ul>
-                        <li>Give your feedback directly to the person it applies to.</li>
-                        <li>Be specific and give examples.</li>
-                        <li>Choose the right place. </li>
-                        <li>Don't dwell on the past.</li>
-                      </ul>
-                    </p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago by Manager</small></p>
-                  </div>
-                </div>
-                <div class="card text-white text-center p-3" style="background-color: rgb(78, 73, 105);">
-                  <blockquote class="blockquote mb-0">
-                    <p>"Make feedback normal. Not a performance review."</p>
-                    <footer class="blockquote-footer">
-                      <small class="text-muted">
-                        Ed Batista
-                      </small>
-                    </footer>
-                  </blockquote>
-                </div>
-                
-                
-                <div class="card text-center">
-                  <div class="card-body">
-                    <p class="card-text">"Success lies in absorbing negative feedback and making the best use of it."</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-                </div>
-                
-                <div class="card p-3">
-                  <blockquote class="blockquote mb-0 card-body">
-                    <p>To serve millions of military members and become one of the only fully 
-                      integrated financial services organizations in America.</p>
-                      <footer class="blockquote-footer">
-                        <small class="text-muted text-right" >
-                          USAA
-                        </small>
-                      </footer>
-                    </blockquote>
-                  </div>
-                  
-                  
-                  
-                  <div class="card">
-                    <img src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">What are the benefits of a Employees Forum?</h5>
-                      <p class="card-text">
-                        <ul>
-                          <li>Company performance: communicating at the beginning of a new project can squash any water cooler rumours or misunderstanding.</li>
-                          <li>Trust: discussing issues head on can stimulate better management-employee relations and result in respect for their leaders.</li>
-                          <li>Job satisfaction: employees are more likely to be motivated if they have a good understanding of their role and how it fits into the overall picture of the company goals.</li>
-                          <li>Work-life balance: managers can easily reach all staff to have meaningful conversations to discuss working policies and practices.</li>
-                        </ul>
-                      </p>
-                      <p class="card-text"><small class="text-muted">Last updated 3 mins ago by Manager</small></p>
-                    </div>
-                  </div>
-                </div>          
-                
-                
-                
-                <!-- Pagination -->
-                <ul class="pagination justify-content-center mb-4">
-                  <li class="page-item">
-                    <a class="page-link" href="#">&larr; Older</a>
-                  </li>
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#">Newer &rarr;</a>
-                  </li>
-                </ul>
-                
+                </blockquote>
               </div>
-              
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/1509428/pexels-photo-1509428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Tips For Giving Effective Feedback</h5>
+                  <p class="card-text">
+                    <ul>
+                      <li>Give your feedback directly to the person it applies to.</li>
+                      <li>Be specific and give examples.</li>
+                      <li>Choose the right place. </li>
+                      <li>Don't dwell on the past.</li>
+                    </ul>
+                  </p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago by Manager</small></p>
+                </div>
+              </div>
+              <div class="card text-white text-center p-3" style="background-color: rgb(78, 73, 105);">
+                <blockquote class="blockquote mb-0">
+                  <p>"Make feedback normal. Not a performance review."</p>
+                  <footer class="blockquote-footer">
+                    <small class="text-muted">
+                      Ed Batista
+                    </small>
+                  </footer>
+                </blockquote>
+              </div>
+
+
+              <div class="card text-center">
+                <div class="card-body">
+                  <p class="card-text">"Success lies in absorbing negative feedback and making the best use of it."</p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+              </div>
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="card-img-top" alt="...">
+              </div>
+
+              <div class="card p-3">
+                <blockquote class="blockquote mb-0 card-body">
+                  <p>To serve millions of military members and become one of the only fully
+                    integrated financial services organizations in America.</p>
+                  <footer class="blockquote-footer">
+                    <small class="text-muted text-right">
+                      USAA
+                    </small>
+                  </footer>
+                </blockquote>
+              </div>
+
+
+
+              <div class="card">
+                <img
+                  src="https://images.pexels.com/photos/380769/pexels-photo-380769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                  class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">What are the benefits of a Employees Forum?</h5>
+                  <p class="card-text">
+                    <ul>
+                      <li>Company performance: communicating at the beginning of a new project can squash any water
+                        cooler rumours or misunderstanding.</li>
+                      <li>Trust: discussing issues head on can stimulate better management-employee relations and result
+                        in respect for their leaders.</li>
+                      <li>Job satisfaction: employees are more likely to be motivated if they have a good understanding
+                        of their role and how it fits into the overall picture of the company goals.</li>
+                      <li>Work-life balance: managers can easily reach all staff to have meaningful conversations to
+                        discuss working policies and practices.</li>
+                    </ul>
+                  </p>
+                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago by Manager</small></p>
+                </div>
+              </div>
             </div>
-            
+
+
+
+            <!-- Pagination -->
+            <ul class="pagination justify-content-center mb-4">
+              <li class="page-item">
+                <a class="page-link" href="#">&larr; Older</a>
+              </li>
+              <li class="page-item disabled">
+                <a class="page-link" href="#">Newer &rarr;</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- profile content -->
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+      <div class="container">
+
+        <div class="row">
+
+          <div class="blank"></div>
+          <!-- About the company  -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">Overview</h2>
+              <p class="card-text">USAA's companies are dedicated to helping you meet your financial goals. From USAA
+                Federal Savings Bank to our property and casualty insurance companies, we strive to be your provider of
+                choice.
+                We have what you need to make it simple, including insurance, financial advice, banking, investing,
+                member discounts and shopping — all delivered according to our core values of honesty, integrity,
+                loyalty and service.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Networth of the company  -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">Net Worth</h2>
+              <p class="card-text">We continue to increase our net worth and assets while achieving expense ratios that
+                are better than the industry. Because of our demonstrated financial strength, we're one of only a
+                handful of organizations to which the global credit rating agencies continue to award the highest
+                possible ratings. Several third-party agencies also recognize our member service, employee well-being
+                and financial strength through their awards and rankings.
+              </p>
+              <img class="card-img-top" src="images/netWorth.PNG" alt="Card image cap">
+            </div>
+
+          </div>
+          <!--  Key USAA Facts and Figures -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <h2 class="card-title">Performance</h2>
+              <p class="card-text">Inspired by our mission and our commitment to provide excellent service for our
+                members, we stand financially strong. It's this strength that enables us to pay claims promptly, serve
+                our growing membership and invest in ways that will help us to better serve you in the future.
+              </p>
+              <img class="card-img-top" src="images/performance.PNG" alt="Card image cap">
+            </div>
+
           </div>
         </div>
-        
-        <!-- profile content -->
-        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-          
-          <div class="container">
-            
-            <div class="row">
-              
-              <div class="blank"></div>
-              <!-- About the company  -->
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h2 class="card-title">Overview</h2>
-                  <p class="card-text">USAA's companies are dedicated to helping you meet your financial goals. From USAA
-                    Federal Savings Bank to our property and casualty insurance companies, we strive to be your provider of
-                    choice.
-                    We have what you need to make it simple, including insurance, financial advice, banking, investing,
-                    member discounts and shopping — all delivered according to our core values of honesty, integrity,
-                    loyalty and service.
-                  </p>
-                </div>
-                
-              </div>
-              
-              <!-- Networth of the company  -->
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h2 class="card-title">Net Worth</h2>
-                  <p class="card-text">We continue to increase our net worth and assets while achieving expense ratios that
-                    are better than the industry. Because of our demonstrated financial strength, we're one of only a
-                    handful of organizations to which the global credit rating agencies continue to award the highest
-                    possible ratings. Several third-party agencies also recognize our member service, employee well-being
-                    and financial strength through their awards and rankings.
-                  </p>
-                  <img class="card-img-top" src="images/netWorth.PNG" alt="Card image cap">
-                </div>
-                
-              </div>
-              <!--  Key USAA Facts and Figures -->
-              <div class="card mb-4">
-                <div class="card-body">
-                  <h2 class="card-title">Performance</h2>
-                  <p class="card-text">Inspired by our mission and our commitment to provide excellent service for our
-                    members, we stand financially strong. It's this strength that enables us to pay claims promptly, serve
-                    our growing membership and invest in ways that will help us to better serve you in the future.
-                  </p>
-                  <img class="card-img-top" src="images/performance.PNG" alt="Card image cap">
-                </div>
-                
-              </div>
-            </div>
-          </div>       
-        </div>
       </div>
-      
     </div>
-    
-    <!-- contact content -->
-    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-      
-      
-    </div>
-    
-    
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  </div>
+
+  </div>
+
+  <!-- contact content -->
+  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+
+
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>

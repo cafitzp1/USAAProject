@@ -85,25 +85,8 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8">
             
-            <h1 class="my-4">
-                Create your own post
-            </h1>
-            
-            
-            <!-- new post -->
-            <div class="card mb-4">
-                <div class="card-body">
-                    <form>
-                        <input class="form-control mr-sm-2" id="postTitle" type="text" placeholder="Post Title" aria-label="post-title">
-                        <br>
-                        <textarea class="form-control" id="postContent" rows="5" placeholder="Post here"></textarea>
-                        <br>
-                        <button class="btn btn-dark" type="button" style="width:8rem; float:right; overflow:auto;" onclick="createPost()">Post</button>
-                    </form> 
-                </div>
-            </div>
-            
-            
+            <!-- Post section from separate file to reduce redundancy -->
+            <%- include partials/post_section %>
             
             <!-- News Feed -->
             <div id="newsFeed">
