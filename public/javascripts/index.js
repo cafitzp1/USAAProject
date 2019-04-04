@@ -139,4 +139,4 @@ const displayPost = (postTitle, postBody, postAuthor, datePosted) => {
 
 $('#post-button').click(() => {
     createPost();
-}); 
+});
