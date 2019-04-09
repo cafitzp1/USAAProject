@@ -12,7 +12,8 @@ BEGIN
                 , `SystemUser`.`Location`
     FROM        `FeedbackPost`
     LEFT JOIN   `SystemUser` ON `FeedbackPost`.`SystemUserID` = `SystemUser`.`SystemUserID`
-    WHERE		Anonymous & 1;
+    WHERE		Anonymous & 1
+    ORDER BY    `FeedbackPost`.`CreateDate` DESC;
 END
  
 -- /* usage: */
