@@ -5,6 +5,22 @@
 <div class="card mb-4">
   <div class="card-body">
     <form id="post-form" name="postForm" action="/feed/new-post-anonymous" method="POST">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <input type="radio" class="radioBtn" name="optradio" id="suggestions" >Suggestions
+          </div>
+          <div class="col-sm">
+            <input type="radio" class="radioBtn" name="optradio" id="grievances" >Grievances
+          </div>
+          <div class="col-sm">
+            <input type="radio" class="radioBtn" name="optradio" id="praise" >Praise
+          </div>
+        </div>
+      </div>
+
+      <div class="blank"></div>
       <input class="form-control mr-sm-2" id="post-title" name="postTitle" type="text" placeholder="Post Title"
         aria-label="post-title">
       <br>
