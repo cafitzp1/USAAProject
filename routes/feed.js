@@ -1,4 +1,5 @@
 const dbHelp = require('../lib/dbHelp');
+const util = require('../lib/util');
 const express = require('express');
 const router = express.Router();
 
@@ -40,7 +41,7 @@ router.post('/new-post', (req, res) => {
     let postTitle = req.body.postTitle;
     let postBody = req.body.postBody;
     let postAuthor = req.body.postAuthor;
-    let datePosted = new Date().toJSON().slice(0, 19).replace('T', ' ');
+    let datePosted = util.dateNow();
 
     let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?)`;
     let conn = dbHelp.dbConnection(3000);
@@ -76,7 +77,7 @@ router.post('/new-post-anonymous', (req, res) => {
     let postTitle = req.body.postTitle;
     let postBody = req.body.postBody;
     let postAuthor = "Anonymous";
-    let datePosted = new Date().toJSON().slice(0, 19).replace('T', ' ');
+    let datePosted = util.dateNow();
 
     let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?)`;
     let conn = dbHelp.dbConnection(3000);
