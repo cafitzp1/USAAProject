@@ -103,24 +103,26 @@ const displayPostPlaceholder = () => {
 
     let postBody = document.getElementById("post-body");
 
-    if(document.getElementById("suggestions").checked)
+    if (document.getElementById("suggestions-radio").checked)
     {
         postBody.placeholder = "What is the issue?\n\nHow do you suggest we fix it?";
     }
-    if(document.getElementById("grievances").checked)
+    if (document.getElementById("grievances-radio").checked)
     {
         postBody.placeholder = "What is the issue?\n\nWhat is the impact?\n\nHow should we address this issue?";
     }
-    if(document.getElementById("praise").checked)
+    if (document.getElementById("praise-radio").checked)
     {
         postBody.placeholder = "Whose work are you praising?\n\nWhat did they do?\n\nHow did it have a meaningful impact?";
     }
-    if(document.getElementById("announcements").checked)
+    if (document.getElementById("announcements-radio") != null)
     {
-        postBody.placeholder = "What is the announcement?";
+        if (document.getElementById("announcements-radio").checked)
+        {
+            postBody.placeholder = "What is the announcement?";
+        }
     }
 
-   
 };
 
 //--- EVENT HANDLERS ---//
@@ -131,4 +133,13 @@ $('#post-button').click(() => {
 
 $('.radioBtn').click(() => {
     displayPostPlaceholder();
+});
+
+// equivalent of an on load method
+$( () => {
+    // execute code based on class attribute applied to body element
+    if ($('body.has-feed').length > 0)
+    {
+        // ...
+    }
 });

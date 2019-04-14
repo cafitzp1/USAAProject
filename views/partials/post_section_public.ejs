@@ -10,16 +10,20 @@
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="suggestions">Suggestions
+            <input type="radio" class="radioBtn" name="optradio" id="suggestions-radio" checked>
+            <label for="suggestions-radio">Suggestions</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="grievances" >Grievances
+            <input type="radio" class="radioBtn" name="optradio" id="grievances-radio">
+            <label for="grievances-radio">Grievances</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="praise" >Praise
+            <input type="radio" class="radioBtn" name="optradio" id="praise-radio">
+            <label for="praise-radio">Praise</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="announcements" >Announcements
+            <input type="radio" class="radioBtn" name="optradio" id="announcements-radio">
+            <label for="announcements-radio">Announcements</label>
           </div>
         </div>
       </div>
@@ -28,7 +32,7 @@
       <input class="form-control mr-sm-2" id="post-title" name="postTitle" type="text" placeholder="Post Title"
         aria-label="post-title">
       <br>
-      <textarea class="form-control" id="post-body" name="postBody" rows="5" placeholder="Post here"></textarea>
+      <textarea class="form-control" id="post-body" name="postBody" rows="6" placeholder="What is the issue?&#10;&#10;How do you suggest we fix it?"></textarea>
       <br>
       <input class="form-control mr-sm-2 col-md-6" id="post-author" name="postAuthor" type="text"
         placeholder="Your Name" aria-label="name">
