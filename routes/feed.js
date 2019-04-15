@@ -2,6 +2,9 @@ const dbHelp = require('../lib/dbHelp');
 const express = require('express');
 const router = express.Router();
 
+// default user Doug Parker, su id 3
+const DEFAULT_USER = 3;
+
 // GET 
 router.get('/', (req, res, next) => {
 
@@ -39,14 +42,13 @@ router.post('/new-post', (req, res) => {
 
     let postTitle = req.body.postTitle;
     let postBody = req.body.postBody;
-    let postAuthor = req.body.postAuthor;
     let datePosted = new Date().toJSON().slice(0, 19).replace('T', ' ');
 
     let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?)`;
     let conn = dbHelp.dbConnection(3000);
 
     conn.connect();
-    conn.query(sql, [1, postTitle, postBody, false, datePosted], (error, results) => {
+    conn.query(sql, [DEFAULT_USER, postTitle, postBody, false, datePosted], (error, results) => {
         if (error) {
             console.error(error);
             res.render('feed', {
@@ -82,7 +84,7 @@ router.post('/new-post-anonymous', (req, res) => {
     let conn = dbHelp.dbConnection(3000);
 
     conn.connect();
-    conn.query(sql, [1, postTitle, postBody, true, datePosted], (error, results) => {
+    conn.query(sql, [DEFAULT_USER, postTitle, postBody, true, datePosted], (error, results) => {
         if (error) {
             console.error(error);
             res.render('anonymous', {
