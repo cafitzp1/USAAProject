@@ -137,6 +137,9 @@ $('.radioBtn').click(() => {
 
 // equivalent of an on load method
 $( () => {
+    // initialize tooltips
+    $('[data-toggle="tooltip"]').tooltip()
+
     // execute code based on class attribute applied to body element
     if ($('body.has-feed').length > 0)
     {
