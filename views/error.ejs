@@ -2,13 +2,15 @@
 <html>
 
 <head>
-  <title>Error</title>
+  <%- include partials/head_elements.ejs %>
 </head>
 
 <body>
   <h1><%= message %></h1>
   <h2><%= error.status %></h2>
   <pre><%= error.stack %></pre>
+
+  <%- include partials/script_elements.ejs %>
 </body>
 
 </html>

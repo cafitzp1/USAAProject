@@ -2,7 +2,8 @@
 <div id="news-feed">
     <!-- News Feed Post -->
     <% if(locals.data){ %>
-        <!-- Data returned: FeedbackPostID, SystemUserID, Title, PostBody, Anonymous, CreateDate -->
+        <!-- Data returned: FeedbackPostID, SystemUserID, Title, PostBody, Anonymous, CreateDate, -->
+        <!-- SystemUserID, Name, Email, Username, Role, Location -->
         <% for(let i = 0; i < locals.data.length; i++) { %>
             <div class="card mb-4">
                 <div class="card-body">
@@ -11,7 +12,7 @@
                 </div>
                 <div class="card-footer text-muted">
                     Posted on <%= locals.data[i].CreateDate.toLocaleString() %> by
-                    <a href="#"><%= locals.data[i].Name || "Anonymous"%></a>
+                    <a href="#" data-toggle="tooltip" title="<%= locals.data[i].Username%>"</a>"><%= locals.data[i].Name || "Anonymous"%></a>
                 </div>
             </div>
          <% } %>
