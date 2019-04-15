@@ -5,13 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./stylesheets/index.css">
-  <title>USAA Project</title>
 
+  <!-- browser tab label and icon-->
+  <title>Feedback Forum</title>
+  <link rel="shortcut icon" href="./images/favicon.ico">
+
+  <!-- css frameworks -->
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
-
-  <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./stylesheets/index.css">
 
   <style>
     .bd-placeholder-img {
@@ -22,6 +24,7 @@
       -ms-user-select: none;
       user-select: none;
     }
+
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
@@ -35,7 +38,8 @@
     <img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required
+      autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
     <div class="checkbox mb-3">
@@ -45,7 +49,7 @@
     </div>
 
     <% if(locals.error){ %>
-      <p style="color: red"><%= error %></p>
+    <p style="color: red"><%= error %></p>
     <% } %>
 
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
@@ -54,7 +58,7 @@
 </body>
 
 <footer>
-  <script src="./javascripts/index.js"></script>
+  <%- include partials/script_elements.ejs %>
 </footer>
 
 </html>
