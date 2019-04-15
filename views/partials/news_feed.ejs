@@ -12,7 +12,7 @@
                 </div>
                 <div class="card-footer text-muted">
                     Posted on <%= locals.data[i].CreateDate.toLocaleString() %> by
-                    <a href="#" data-toggle="tooltip" data-html="true" title="
+                    <a class="name" href="javascript:void(0);" data-toggle="tooltip" data-html="true" title="
                             Role: <b><%= locals.data[i].Role%></b><br>
                             Location: <b><%= locals.data[i].Location%></b>
                         "</a><%= locals.data[i].Name || "Anonymous"%></a>

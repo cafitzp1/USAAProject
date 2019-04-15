@@ -146,3 +146,8 @@ $( () => {
         // ...
     }
 });
+
+// TODO: implement handler for region and role select onchange to filter data
+// TODO: require all data for new post
+// TODO: fix anonymous forum view button and forum nav item toggling when selected
+// TODO: add separate input elements for post radio options, concatenate on post
