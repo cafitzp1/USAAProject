@@ -17,12 +17,17 @@ CREATE TABLE `SystemUser` (
 DROP TABLE IF EXISTS `FeedbackPost`;
 CREATE TABLE `FeedbackPost` (
     `FeedbackPostID` INT NOT NULL AUTO_INCREMENT
-    , `SystemUserID` INT NOT NULL
     , `Title` VARCHAR(40)
-    , `PostBody` VARCHAR(255)
-    , `Anonymous` BIT NOT NULL
     , `CreateDate` TIMESTAMP NOT NULL
+    , `Anonymous` BIT NOT NULL
+    , `Field1` VARCHAR(255)
+    , `Field2` VARCHAR(255)
+    , `Field3` VARCHAR(255)
+    , `Field4` VARCHAR(255)
+    , `PostTypeID` INT NOT NULL
+    , `SystemUserID` INT NOT NULL
     , PRIMARY KEY (`FeedbackPostID`)
+    , FOREIGN KEY (`PostTypeID`) REFERENCES PostType(`PostTypeID`)
     , FOREIGN KEY (`SystemUserID`) REFERENCES SystemUser(`SystemUserID`)
 );
 
@@ -36,6 +41,17 @@ CREATE TABLE `Session` (
     , `Active` BIT NOT NULL
     , PRIMARY KEY (`SessionID`)
     , FOREIGN KEY (`SystemUserID`) REFERENCES SystemUser(`SystemUserID`)
+);
+
+DROP TABLE IF EXISTS `PostType`;
+CREATE TABLE `PostType` (
+    `PostTypeID` INT NOT NULL AUTO_INCREMENT
+    , `Type` VARCHAR(40) NOT NULL
+    , `Question1` VARCHAR(255)
+    , `Question2` VARCHAR(255)
+    , `Question3` VARCHAR(255)
+    , `Question4` VARCHAR(255)
+    , PRIMARY KEY (`PostTypeID`)
 );
 
 SET FOREIGN_KEY_CHECKS = 1;

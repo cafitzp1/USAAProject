@@ -2,17 +2,59 @@
 <div id="news-feed">
     <!-- News Feed Post -->
     <% if(locals.data){ %>
-        <!-- Data returned: FeedbackPostID, SystemUserID, Title, PostBody, Anonymous, CreateDate, -->
-        <!-- SystemUserID, Name, Email, Username, Role, Location -->
         <% for(let i = 0; i < locals.data.length; i++) { %>
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title"><%= locals.data[i].Title %></h2>
-                    <p class="card-text"><%= locals.data[i].PostBody %></p>
+
+                    <% if (locals.data[i].Field1 != null && locals.data[i].Field1 != '') { %>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question1 %></p>
+                        </blockquote>
+                        <p class="card-text"><%= locals.data[i].Field1 %></p>
+                    <% } %>
+
+                    <% if (locals.data[i].Field2 != null && locals.data[i].Field2 != '') { %>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question2 %></p>
+                        </blockquote>
+                        <p class="card-text"><%= locals.data[i].Field2 %></p>
+                    <% } %>
+
+                    <% if (locals.data[i].Field3 != null && locals.data[i].Field3 != '') { %>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question3 %></p>
+                        </blockquote>
+                        <p class="card-text"><%= locals.data[i].Field3 %></p>
+                    <% } %>
+
+                    <% if (locals.data[i].Field4 != null && locals.data[i].Field4 != '') { %>
+                        <blockquote class="blockquote"></blockquote>
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question4 %></p>
+                        </blockquote>
+                        <p class="card-text"><%= locals.data[i].Field4 %></p>
+                    <% } %>
+
                 </div>
                 <div class="card-footer text-muted">
-                    Posted on <%= locals.data[i].CreateDate.toLocaleString() %> by
+
+                    <% if (locals.data[i].PostTypeID == 1) { %>
+                        <b>Suggestion</b>
+                    <% } else if (locals.data[i].PostTypeID == 2) { %>
+                        <b>Grievance</b>
+                    <% } else if (locals.data[i].PostTypeID == 3) { %>
+                        <b>Praise</b>
+                    <% } else if (locals.data[i].PostTypeID == 4) { %>
+                        <b>Announcement</b>
+                    <% } %>
+
+                    posted <%= locals.data[i].CreateDate.toLocaleString() %> by
                     <a class="name" href="javascript:void(0);" data-toggle="tooltip" data-html="true" title="
+                            
+                            <% if (locals.data[i].Email) { %>
+                                <%= locals.data[i].Email%><br>
+                            <% } %>
+
                             Role: <b><%= locals.data[i].Role%></b><br>
                             Location: <b><%= locals.data[i].Location%></b>
                         "</a><%= locals.data[i].Name || "Anonymous"%></a>

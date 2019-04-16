@@ -1,0 +1,8 @@
+[
+  "'20','3','Team Building Activities','After having a meeting with Kevin Hong, VP of Operations, it has been decided that the trip to New York for team building activities has been canceled. The new location will have to be voted upon. John Brown will be leading the activites. Please contact m','0',NULL,'2019-04-04 10:22:25'",
+  "'21', '5', 'Security', 'A few employees have noticed suspicious activity behind building CD-43 on thursday around 10PM.', '0', NULL, '2019-04-05 08:02:52'",
+  "'22', '8', 'Office Supplies Delay', 'We have ran out of ink for our printers and there is no ink in the store room. This has cause us a delay in our work flow as we have to send someone to buy more. A system needs to be developed in order to prevent this issue from happening again.', '0', NULL, '2019-04-07 16:42:23'",
+  "'23', '6', 'Management', 'A few co-workers are unhappy with how the promotion system. The requirements are not clear enough for some to take a proactive approach in getting a promotion.', '1', NULL, '2019-04-11 12:00:05'",
+  "'28', '10', 'Citrix problems', 'Our whole department for some reason can not log into their Citrix accounts. Can someone from the IT department research this problem.', '0', NULL, '2019-04-11 07:59:19'",
+  "'29', '4', 'Reimbursement', 'A few employees have to travel 80+ miles each day for work. Would it be possible for the company to reimburse them for their commitment to the company?', '1', NULL, '2019-04-05 17:40:35'"
+]

@@ -41,14 +41,18 @@ router.get('/', (req, res, next) => {
 router.post('/new-post', (req, res) => {
 
     let postTitle = req.body.postTitle;
-    let postBody = req.body.postBody;
+    let field1 = req.body.field1;
+    let field2 = req.body.field2;
+    let field3 = req.body.field3;
+    let field4 = req.body.field4;
     let datePosted = new Date().toJSON().slice(0, 19).replace('T', ' ');
+    let postID = req.body.optradio;
 
-    let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?)`;
+    let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     let conn = dbHelp.dbConnection(3000);
 
     conn.connect();
-    conn.query(sql, [DEFAULT_USER, postTitle, postBody, false, datePosted], (error, results) => {
+    conn.query(sql, [DEFAULT_USER, postTitle, datePosted, false, field1, field2, field3, field4, postID], (error, results) => {
         if (error) {
             console.error(error);
             res.render('feed', {
@@ -68,7 +72,7 @@ router.post('/new-post', (req, res) => {
             });
 
             // refresh current page
-            res.redirect('.');
+            res.redirect('../feed');
         }
     });
 });
@@ -76,15 +80,18 @@ router.post('/new-post', (req, res) => {
 router.post('/new-post-anonymous', (req, res) => {
 
     let postTitle = req.body.postTitle;
-    let postBody = req.body.postBody;
-    let postAuthor = "Anonymous";
+    let field1 = req.body.field1;
+    let field2 = req.body.field2;
+    let field3 = req.body.field3;
+    let field4 = req.body.field4;
     let datePosted = new Date().toJSON().slice(0, 19).replace('T', ' ');
+    let postID = req.body.optradio;
 
-    let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?)`;
+    let sql = `CALL FeedbackPost_Create(?, ?, ?, ?, ?, ?, ?, ?, ?)`;
     let conn = dbHelp.dbConnection(3000);
 
     conn.connect();
-    conn.query(sql, [DEFAULT_USER, postTitle, postBody, true, datePosted], (error, results) => {
+    conn.query(sql, [DEFAULT_USER, postTitle, datePosted, true, field1, field2, field3, field4, postID], (error, results) => {
         if (error) {
             console.error(error);
             res.render('anonymous', {

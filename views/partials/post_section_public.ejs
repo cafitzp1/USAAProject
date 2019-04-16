@@ -9,33 +9,26 @@
       <div class="container">
         <div class="row">
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="suggestions-radio" checked>
+            <input type="radio" class="radioBtn" value="1" name="optradio" id="suggestions-radio" checked>
             <label for="suggestions-radio">Suggestions</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="grievances-radio">
+            <input type="radio" class="radioBtn" value="2" name="optradio" id="grievances-radio">
             <label for="grievances-radio">Grievances</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="praise-radio">
+            <input type="radio" class="radioBtn" value="3" name="optradio" id="praise-radio">
             <label for="praise-radio">Praise</label>
           </div>
           <div class="col-sm">
-            <input type="radio" class="radioBtn" name="optradio" id="announcements-radio">
+            <input type="radio" class="radioBtn" value="4" name="optradio" id="announcements-radio">
             <label for="announcements-radio">Announcements</label>
           </div>
         </div>
       </div>
 
-      <div class="blank"></div>
-      <input class="form-control mr-sm-2" id="post-title" name="postTitle" type="text" placeholder="Post Title"
-        aria-label="post-title" required>
-      <br>
-      <textarea class="form-control" id="post-body" name="postBody" rows="6" placeholder="What is the issue?&#10;&#10;How do you suggest we fix it?" required></textarea>
-      <br>
-      <button class="btn btn-secondary" id="post-button" type="submit" style="width:8rem; float:right; overflow:auto;">
-        Post
-      </button>
+      <%- include ./post_section_inputs.ejs %>
+      
     </form>
   </div>
 </div>
