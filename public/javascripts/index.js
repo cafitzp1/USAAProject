@@ -136,10 +136,225 @@ const displayPostPlaceholder = () => {
     }
 };
 
+const setDataToDisplay = () => {
+
+    //TODO: remove
+    console.log('filtering...');
+
+    // initialize local variables
+    let dataToDisplay = [];
+    let feedHTML = "";
+
+    // clear #news-feed
+    $('#news-feed').html('');
+
+    // store current filter values
+    let roleFilter = $('#role-select option:selected').val();
+    let locationFilter = $('#region-select option:selected').val();
+    let postTypeFilter = $('#post-type-select option:selected').val();
+
+    //TODO: remove
+    console.log('filter1: ' + roleFilter);
+    console.log('filter2: ' + locationFilter);
+    console.log('filter3: ' + postTypeFilter);
+
+    // set data which applies to the current filters to display
+    for (let item of data) {
+
+        // if all 3 all, add
+        if ((roleFilter == 'All' || roleFilter == 'Role') &&
+            (locationFilter == 'All' || locationFilter == 'Location') &&
+            (postTypeFilter == 'All' || postTypeFilter == 'Post Type')) {
+            
+            dataToDisplay.push(item);
+        }
+        // if 1 and 2 all, add where 3
+        else if ((roleFilter == 'All' || roleFilter == 'Role') &&
+            (locationFilter == 'All' || locationFilter == 'Location')) {
+
+            if (item.Type == postTypeFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // if 1 and 3 all, add where 2
+        else if ((roleFilter == 'All' || roleFilter == 'Role') &&
+            (postTypeFilter == 'All' || postTypeFilter == 'Post Type')) {
+
+            if (item.Location == locationFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // if 2 and 3 all, add where 1
+        else if ((locationFilter == 'All' || locationFilter == 'Location') &&
+            (postTypeFilter == 'All' || postTypeFilter == 'Post Type')) {
+
+            if (item.Role == roleFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // if 1 all, add where 2 and 3
+        else if (roleFilter == 'All' || roleFilter == 'Role') {
+            if (item.Location == locationFilter && item.Type == postTypeFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // if 2 all, add where 1 and 3
+        else if (locationFilter == 'All' || locationFilter == 'Location') {
+            if (item.Role == roleFilter && item.Type == postTypeFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // if 3 all, add where 1 and 2
+        else if (postTypeFilter == 'All' || postTypeFilter == 'Post Type') {
+            if (item.Role == roleFilter && item.Location == locationFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+        // check all 3
+        else {
+            if (item.Role == roleFilter && item.Location == locationFilter && item.Type == postTypeFilter) { 
+                dataToDisplay.push(item);
+            }
+        }
+    }
+
+    // TODO: remove
+    if (dataToDisplay.length > 0)
+        console.log(dataToDisplay);
+    else
+        console.log("no data");
+
+    // for new data, set html for card with formatted body
+    for (let item of dataToDisplay) {
+        let cardHTML = `
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">${item.Title}</h2>
+        `;
+
+        if (item.Field1 != null && item.Field1 != '') {
+            cardHTML += `
+                        <p class="card-text">${item.Question1}</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer">${item.Field1}</p>
+                        </blockquote>
+            `
+        }
+
+        if (item.Field2 != null && item.Field2 != '') {
+            cardHTML += `
+                        <p class="card-text">${item.Question2}</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer">${item.Field2}</p>
+                        </blockquote>
+            `
+        }
+
+        if (item.Field3 != null && item.Field3 != '') {
+            cardHTML += `
+                        <p class="card-text">${item.Question3}</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer">${item.Field3}</p>
+                        </blockquote>
+            `
+        }
+
+        if (item.Field4 != null && item.Field4 != '') {
+            cardHTML += `
+                        <p class="card-text">${item.Question4}</p>
+                        <blockquote class="blockquote">
+                            <p class="mb-0 blockquote-footer">${item.Field4}</p>
+                        </blockquote>
+            `
+        }
+
+        cardHTML += `
+                    </div>
+                    <div class="card-footer text-muted">
+        `
+
+        if (item.PostTypeID == 1) {
+            cardHTML += `
+                        <b>Suggestion</b>
+            `
+        } else if (item.PostTypeID == 2) {
+            cardHTML += `
+                        <b>Grievance</b>
+            `
+        } else if (item.PostTypeID == 3) {
+            cardHTML += `
+                        <b>Praise</b>
+            `
+        } else if (item.PostTypeID == 4) {
+            cardHTML += `
+                        <b>Announcement</b>
+            `
+        }
+
+        let name = item.Name || "Anonymous";
+        let date = convertUTCDateToLocalDate(new Date(item.CreateDate));
+        date = date.toLocaleString();
+        
+        if (item.Email) {
+            cardHTML += `
+                    posted ${date} by
+                    <a class="name" href="javascript:void(0);" data-toggle="tooltip" data-html="true" title="
+                            ${item.Email}<br>
+                            Role: <b>${item.Role}</b><br>
+                            Location: <b>${item.Location}</b>
+                        "</a>${name}</a>
+                </div>
+            </div>
+            `;
+        } else {
+            cardHTML += `
+                    posted ${date} by
+                    <a class="name" href="javascript:void(0);" data-toggle="tooltip" data-html="true" title="
+                            Role: <b>${item.Role}</b><br>
+                            Location: <b>${item.Location}</b>
+                        "</a>${name}</a>
+                </div>
+            </div>
+            `;
+        }
+                    
+        feedHTML += cardHTML;
+    }
+
+    // add html
+    $('#news-feed').html(feedHTML);
+
+    // reset tooltips
+    $('[data-toggle="tooltip"]').tooltip();
+};
+
+const convertUTCDateToLocalDate = (date) => {
+    let newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+    let offset = date.getTimezoneOffset() / 60;
+    let hours = date.getHours();
+
+    newDate.setHours(hours - offset);
+
+    return newDate;   
+};
+
 //--- EVENT HANDLERS ---//
 
 $('.radioBtn').click(() => {
     displayPostPlaceholder();
+});
+
+$('#role-select').change(() => {
+    setDataToDisplay();
+});
+
+$('#region-select').change(() => {
+    setDataToDisplay();
+});
+
+$('#post-type-select').change(() => {
+    setDataToDisplay();
 });
 
 // equivalent of an on load method
@@ -169,5 +384,4 @@ $(() => {
     }
 });
 
-// TODO: implement handler for region and role select onchange to filter data
 // TODO: add user management nav item
