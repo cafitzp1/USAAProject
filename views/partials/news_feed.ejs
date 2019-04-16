@@ -1,3 +1,17 @@
+<!-- function for converting date to local -->
+<%
+    function convertUTCDateToLocalDate(date) {
+        var newDate = new Date(date.getTime()+date.getTimezoneOffset()*60*1000);
+
+        var offset = date.getTimezoneOffset() / 60;
+        var hours = date.getHours();
+
+        newDate.setHours(hours - offset);
+
+        return newDate;   
+    }
+%>
+
 <!-- News Feed -->
 <div id="news-feed">
     <!-- News Feed Post -->
@@ -8,31 +22,31 @@
                     <h2 class="card-title"><%= locals.data[i].Title %></h2>
 
                     <% if (locals.data[i].Field1 != null && locals.data[i].Field1 != '') { %>
+                        <p class="card-text"><%= locals.data[i].Question1 %></p>
                         <blockquote class="blockquote">
-                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question1 %></p>
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Field1 %></p>
                         </blockquote>
-                        <p class="card-text"><%= locals.data[i].Field1 %></p>
                     <% } %>
 
                     <% if (locals.data[i].Field2 != null && locals.data[i].Field2 != '') { %>
+                        <p class="card-text"><%= locals.data[i].Question2 %></p>
                         <blockquote class="blockquote">
-                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question2 %></p>
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Field2 %></p>
                         </blockquote>
-                        <p class="card-text"><%= locals.data[i].Field2 %></p>
                     <% } %>
 
                     <% if (locals.data[i].Field3 != null && locals.data[i].Field3 != '') { %>
+                        <p class="card-text"><%= locals.data[i].Question3 %></p>
                         <blockquote class="blockquote">
-                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question3 %></p>
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Field3 %></p>
                         </blockquote>
-                        <p class="card-text"><%= locals.data[i].Field3 %></p>
                     <% } %>
 
                     <% if (locals.data[i].Field4 != null && locals.data[i].Field4 != '') { %>
+                        <p class="card-text"><%= locals.data[i].Question4 %></p>
                         <blockquote class="blockquote"></blockquote>
-                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Question4 %></p>
+                            <p class="mb-0 blockquote-footer"><%= locals.data[i].Field4 %></p>
                         </blockquote>
-                        <p class="card-text"><%= locals.data[i].Field4 %></p>
                     <% } %>
 
                 </div>
@@ -48,7 +62,7 @@
                         <b>Announcement</b>
                     <% } %>
 
-                    posted <%= locals.data[i].CreateDate.toLocaleString() %> by
+                    posted <%= convertUTCDateToLocalDate(locals.data[i].CreateDate).toLocaleString() %> by
                     <a class="name" href="javascript:void(0);" data-toggle="tooltip" data-html="true" title="
                             
                             <% if (locals.data[i].Email) { %>
@@ -62,4 +76,9 @@
             </div>
          <% } %>
     <% } %>
+
+    <!-- store news feed data -->
+    <script type='text/javascript'>
+        let data =<%-JSON.stringify(locals.data)%>
+    </script>
 </div>
